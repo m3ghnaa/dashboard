@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <style>
+    *{
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      height: 100vh;
+    }
+
+    nav, header, main, aside {
+      background-color: brown;
+      color: #fff;
+      border: 1px solid wheat;
+    }
+
+    .container {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: 1fr 4fr;
+      grid-template-areas: 
+      "nav header header"
+      "nav content sidebar"
+      ;
+    }
+
+    .nav {
+      grid-area: nav;
+    }
+    .header {
+      grid-area: header;
+    }
+    .content{
+      grid-area: content;
+    }
+    .sidebar {
+      grid-area: sidebar;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class = "container">
+    <nav class = "nav">
+      <h2> Dashboard</h2>
+    </nav>
+    <header class = "header">
+      <h2> Header</h2>
+    </header>
+    <main class = "content">
+      <h2> Content </h2>
+    </main>
+    <aside class = "sidebar">
+      <h2> Side Bar</h2>
+    </aside>
+  </div>
+</body>
+</html>
