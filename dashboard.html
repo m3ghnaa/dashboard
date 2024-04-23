@@ -3,68 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-
+  <title>Admin Dashboard</title>
+ 
   <style>
-    *{
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 16px;
-      height: 100vh;
-    }
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr; 
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+  height: 100vh;
+}
 
-    nav, header, main, aside {
-      background-color: brown;
-      color: #fff;
-      border: 1px solid wheat;
-    }
+header {
+  grid-area: header;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
 
-    .container {
-      height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 3fr 1fr;
-      grid-template-rows: 1fr 4fr;
-      grid-template-areas: 
-      "nav header header"
-      "nav content sidebar"
-      ;
-    }
+nav {
+  grid-area: sidebar;
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+}
 
-    .nav {
-      grid-area: nav;
-    }
-    .header {
-      grid-area: header;
-    }
-    .content{
-      grid-area: content;
-    }
-    .sidebar {
-      grid-area: sidebar;
-    }
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 3fr 1fr ; 
+  grid-template-rows: 1fr 1fr ; 
+  grid-template-areas: 
+  "main side-div1"
+  "main side-div2";
+  gap: 20px;
+  padding: 20px;
+  height: max-content;
+}
+
+.main-content {
+  background-color: #eee;
+  padding: 20px;
+}
+
+.side-div1{
+  background-color: #ddd;
+  grid-area: side-div1;
+  padding: 20px;
+}
+
+.side-div2 {
+  background-color: #ddd;
+  grid-area: side-div2;
+  padding: 20px;
+
+}
+
+
   </style>
-
 </head>
-
 <body>
-  <div class = "container">
-    <nav class = "nav">
-      <h2> Dashboard</h2>
-    </nav>
-    <header class = "header">
-      <h2> Header</h2>
-    </header>
-    <main class = "content">
-      <h2> Content </h2>
+  <div class="container">
+    <header>Header</header>
+    <nav>Sidebar</nav>
+    <main>
+      <div class="main-content">Main Content</div>
+      <div class="side-div1">Side Div 1</div>
+      <div class="side-div2">Side Div 2</div>
     </main>
-    <aside class = "sidebar">
-      <h2> Side Bar</h2>
-    </aside>
   </div>
 </body>
 </html>
