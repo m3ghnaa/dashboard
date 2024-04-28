@@ -13,6 +13,7 @@ body, html {
 }
 
 .container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 4fr; 
   grid-template-rows: 1fr 4fr;
@@ -24,9 +25,12 @@ body, html {
 
 header {
   grid-area: header;
-  background-color: #333;
-  color: #fff;
+  background-color: white;
   padding: 20px;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+
 }
 
 nav {
@@ -47,24 +51,49 @@ main {
   gap: 20px;
   padding: 20px;
   height: max-content;
+  background-color: #B0E0E6;
+  height: 100vh;
 }
 
-.main-content {
-  background-color: #eee;
-  padding: 20px;
-}
 
 .side-div1{
-  background-color: #ddd;
+  border: 1px solid blue;
   grid-area: side-div1;
   padding: 20px;
+  height: 30vh;
 }
 
 .side-div2 {
+  border: 1px solid blue;
   background-color: #ddd;
   grid-area: side-div2;
-  padding: 20px;
+  margin-top: -300px;
 
+}
+
+button {
+  background-color: #007FFF;
+  color: white;
+  height: 30px;
+  border: none;
+  border-radius: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 20px;
+}
+
+.card {
+  height: 150px;
+  width: 300px;
+  background-color: white;
+  border-left: 4px solid green;
+  margin-top: 10px;
 }
 
 
@@ -72,12 +101,50 @@ main {
 </head>
 <body>
   <div class="container">
-    <header>Header</header>
-    <nav>Sidebar</nav>
+    <header>
+      <div>
+        <img src="assets/magnify.png" alt="Search" width="20" height="20" style="margin-left: 10px; margin-right: 10px; margin-bottom: -5px;">
+        <input type="text" style="width: 600px; 
+        padding: 5px;
+        border-radius: 15px;
+        border: none;
+        margin-right: 10px;
+        background-color: #ddd;">      
+        <img src="assets/bell-outline.png" width="20" height="20" alt="Notifications" style="margin-left: 80px; margin-bottom: -5px;">
+        <img src="assets/ghost.png" height="40" width="40" alt="Profile" style = "margin-left: 30px; margin-bottom: -15px; border-radius: 50px; border: 2px solid green">
+        <p style = "display: inline; padding: 20px;"><b>Ghost Face</b></p>
+        </div>
+
+        <div style = "padding-top: 30px;">
+          <img src="assets/ghost.png" height="50" width="50" alt="Profile" style = "margin-right: 5px; margin-bottom: -25px; border-radius: 50px; border: 2px solid green">
+          <p style = "z-index: -1; display: inline; padding-left: 10px; margin-top: -20px;"> Hi there, <br> <span style="padding-left: 70px; font-size: 18px"> <b>Ghost Face (@ghostface) </b></span></p>
+
+          <button style = "margin-left: 450px;"> New </button>
+          <button style = "margin-left: 30px;"> Upload</button>
+          <button style = "margin-left: 30px;"> Share </button>
+        </div>
+
+
+    </header>
+    <nav>Dashboard</nav>
     <main>
-      <div class="main-content">Main Content</div>
-      <div class="side-div1">Side Div 1</div>
-      <div class="side-div2">Side Div 2</div>
+      <div class="main-content">
+        <p>Your Projects</p>
+      <div class = "project-cards">
+        <div class = "card"></div>
+        <div class = "card"></div>
+        <div class = "card"></div>
+        <div class = "card"></div>
+        <div class = "card"></div>
+        <div class = "card"></div>
+      </div>
+      </div>
+      <div class="side-div1">
+        <div class = "announcement"></div>
+      </div>
+      <div class="side-div2">
+        <div class = "trending"></div>
+      </div>
     </main>
   </div>
 </body>
